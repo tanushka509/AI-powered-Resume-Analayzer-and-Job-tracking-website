@@ -99,3 +99,31 @@ MongoDB Database
 ├── Users Collection
 └── Jobs Collection
 
+## 🔁 System Workflow
+
+### 1. Authentication Flow
+- User registers or logs in
+- Server validates credentials
+- JWT token is generated and returned
+- Token is used for accessing protected routes
+
+---
+
+### 2. Resume Analysis Flow
+- User uploads PDF resume
+- Server extracts text using pdf-parse
+- Extracted text is sent to Groq AI API
+- AI returns:
+  - Skills
+  - Resume feedback
+  - Improvement suggestions
+- Structured response is sent to client
+
+---
+
+### 3. Job Tracking Flow
+- User creates job entry
+- Job is stored in MongoDB with userId
+- User can update job status
+- User can delete or fetch jobs
+- Each operation is authenticated via JWT
