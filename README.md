@@ -73,20 +73,25 @@ The system is designed using a modular REST API architecture and can be integrat
 - DELETE `/api/jobs/:id` → Delete job
 
 ---
+### 🏗️ Architecture
 
-## 📦 Installation
+```mermaid id="arch1"
+flowchart TD
 
-```bash
-git clone https://github.com/tanushka509/AI-powered-Resume-Analayzer-and-Job-tracking-website.git
-cd AI-powered-Resume-Analayzer-and-Job-tracking-website
-npm install
-npm run dev
+A[Client / API Request] --> B[Express Server]
+B --> C[Middleware Layer - JWT Auth]
+C --> D[Controllers]
 
-🔐 Environment Variables
+D --> E1[Auth Service]
+D --> E2[Resume Service]
+D --> E3[Job Service]
 
-Create a .env file in the root directory and add the following:
+E2 --> F1[PDF Parser - pdf-parse]
+E2 --> F2[Groq AI API]
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GROQ_API_KEY=your_groq_api_key
+E3 --> G[MongoDB - Jobs Collection]
+E1 --> H[MongoDB - Users Collection]
+
+F1 --> F2 --> G
+---
+
