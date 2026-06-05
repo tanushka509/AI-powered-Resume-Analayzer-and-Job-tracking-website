@@ -73,25 +73,29 @@ The system is designed using a modular REST API architecture and can be integrat
 - DELETE `/api/jobs/:id` → Delete job
 
 ---
-### 🏗️ Architecture
+```md
+## 🏗️ Architecture
 
-```mermaid id="arch1"
-flowchart TD
 
-A[Client / API Request] --> B[Express Server]
-B --> C[Middleware Layer - JWT Auth]
-C --> D[Controllers]
-
-D --> E1[Auth Service]
-D --> E2[Resume Service]
-D --> E3[Job Service]
-
-E2 --> F1[PDF Parser - pdf-parse]
-E2 --> F2[Groq AI API]
-
-E3 --> G[MongoDB - Jobs Collection]
-E1 --> H[MongoDB - Users Collection]
-
-F1 --> F2 --> G
+Client / API Request
+↓
+Express Server
+↓
+JWT Authentication Middleware
+↓
+Controllers Layer
+├── Auth Controller
+├── Resume Controller
+└── Job Controller
+↓
+Service Layer
+├── Auth Service (JWT + bcrypt)
+├── Resume Service
+│ ├── pdf-parse (extract text)
+│ └── Groq AI API (analysis)
+└── Job Service (CRUD operations)
+↓
+MongoDB Database
+├── Users Collection
+└── Jobs Collection
 ---
-
