@@ -54,21 +54,6 @@ The system is designed using a modular REST API architecture and can be integrat
 
 ---
 
-## 🏗️ Architecture
-Client (API / Frontend)
-↓
-Express Routes
-↓
-Middleware (JWT Auth)
-↓
-Controllers
-↓
-Services
-├── Resume Parser (pdf-parse)
-├── AI Service (Groq API)
-└── Job Service (CRUD)
-↓
-MongoDB (Database)
 
 ---
 
@@ -87,14 +72,6 @@ MongoDB (Database)
 - PUT `/api/jobs/:id` → Update job
 - DELETE `/api/jobs/:id` → Delete job
 
----
-
-## 🔐 Environment Variables
-Create a `.env` file in the root directory:
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GROQ_API_KEY=your_groq_api_key
 ---
 
 ## 📦 Installation
