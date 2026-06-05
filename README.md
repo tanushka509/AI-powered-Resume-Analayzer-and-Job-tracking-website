@@ -74,7 +74,7 @@ The system is designed using a modular REST API architecture and can be integrat
 
 ---
 ```md
-## 🏗️ Architecture
+ARCHITECTURE
 
 
 Client / API Request
@@ -98,4 +98,4 @@ Service Layer
 MongoDB Database
 ├── Users Collection
 └── Jobs Collection
----
+
