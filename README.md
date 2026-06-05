@@ -74,35 +74,27 @@ The system is designed using a modular REST API architecture and can be integrat
 
 ---
 ## 🏗️ Architecture
-flowchart TD
-    A[Client / API Request] --> B[Express Server]
-    B --> C[JWT Authentication Middleware]
-
-    C --> D[Controllers Layer]
-
-    D --> D1[Auth Controller]
-    D --> D2[Resume Controller]
-    D --> D3[Job Controller]
-
-    D1 --> E[Service Layer]
-    D2 --> E
-    D3 --> E
-
-    E --> E1[Auth Service (JWT + bcrypt)]
-    E --> E2[Resume Service]
-    E --> E3[Job Service (CRUD operations)]
-
-    E2 --> F1[pdf-parse (extract text)]
-    E2 --> F2[Groq AI API (analysis)]
-
-    E1 --> G[MongoDB Database]
-    E2 --> G
-    E3 --> G
-
-    G --> G1[Users Collection]
-    G --> G2[Jobs Collection]
-
----
+Client / API Request
+        ↓
+Express Server
+        ↓
+JWT Authentication Middleware
+        ↓
+Controllers Layer
+   ├── Auth Controller
+   ├── Resume Controller
+   └── Job Controller
+        ↓
+Service Layer
+   ├── Auth Service (JWT + bcrypt)
+   ├── Resume Service
+   │     ├── pdf-parse (extract text)
+   │     └── Groq AI API (analysis)
+   └── Job Service (CRUD operations)
+        ↓
+MongoDB Database
+   ├── Users Collection
+   └── Jobs Collection
 
 ## 🔁 System Workflow
 
