@@ -73,10 +73,7 @@ The system is designed using a modular REST API architecture and can be integrat
 - DELETE `/api/jobs/:id` → Delete job
 
 ---
-```md
-ARCHITECTURE
-
-
+## 🏗️ Architecture
 Client / API Request
 ↓
 Express Server
@@ -99,13 +96,15 @@ MongoDB Database
 ├── Users Collection
 └── Jobs Collection
 
+---
+
 ## 🔁 System Workflow
 
 ### 1. Authentication Flow
 - User registers or logs in
 - Server validates credentials
 - JWT token is generated and returned
-- Token is used for accessing protected routes
+- Token is used to access protected routes
 
 ---
 
@@ -124,6 +123,35 @@ MongoDB Database
 ### 3. Job Tracking Flow
 - User creates job entry
 - Job is stored in MongoDB with userId
-- User can update job status
-- User can delete or fetch jobs
-- Each operation is authenticated via JWT
+- User updates job status
+- User deletes or fetches jobs
+- All operations are protected using JWT
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/tanushka509/AI-powered-Resume-Analayzer-and-Job-tracking-website.git
+cd AI-powered-Resume-Analayzer-and-Job-tracking-website
+npm install
+npm run dev
+
+🔐 Environment Variables
+
+Create a .env file in the root directory:
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GROQ_API_KEY=your_groq_api_key
+
+🚀 Future Improvements
+Add ATS resume scoring system (0–100)
+Support DOCX and TXT resume formats
+Add caching for AI responses to reduce API cost
+Improve prompt engineering for better AI accuracy
+Add rate limiting for security
+Dockerize backend for deployment
+Add WebSocket-based real-time job tracking updates
+
