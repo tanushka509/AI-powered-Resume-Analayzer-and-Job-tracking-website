@@ -54,9 +54,6 @@ The system is designed using a modular REST API architecture and can be integrat
 
 ---
 
-
----
-
 ## 🔁 API Endpoints
 
 ### Auth Routes
@@ -74,27 +71,31 @@ The system is designed using a modular REST API architecture and can be integrat
 
 ---
 ## 🏗️ Architecture
-[ Client / API Request ]
-            ↓
-[ Express Server ]
-            ↓
-[ JWT Authentication Middleware ]
-            ↓
-[ Controllers Layer ]
+<pre>
+SYSTEM ARCHITECTURE FLOW
+
+Client / API Request
+        ↓
+Express Server
+        ↓
+JWT Authentication Middleware
+        ↓
+Controllers Layer
    ├── Auth Controller
    ├── Resume Controller
    └── Job Controller
-            ↓
-[ Service Layer ]
+        ↓
+Service Layer
    ├── Auth Service (JWT + bcrypt)
    ├── Resume Service
-   │     ├── pdf-parse (text extraction)
-   │     └── Groq AI API (resume analysis)
+   │     ├── pdf-parse (extract text)
+   │     └── Groq AI API (analysis)
    └── Job Service (CRUD operations)
-            ↓
-[ MongoDB Database ]
+        ↓
+MongoDB Database
    ├── Users Collection
    └── Jobs Collection
+</pre>
 
 ## 🔁 System Workflow
 
@@ -134,13 +135,26 @@ git clone https://github.com/tanushka509/AI-powered-Resume-Analayzer-and-Job-tra
 cd AI-powered-Resume-Analayzer-and-Job-tracking-website
 npm install
 npm run dev
+```
 
-🔐 Environment Variables
+##🔐 Environment Variables
 
 Create a .env file in the root directory:
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GROQ_API_KEY=your_groq_api_key
+-PORT=5000
 
+-MONGO_URI=your_mongodb_connection_string
+
+-JWT_SECRET=your_jwt_secret
+
+-GROQ_API_KEY=your_groq_api_key
+
+## 🚀 Future Goals
+Goals
+- Develop a full frontend dashboard using React.js for better user experience
+- Implement AI-based resume scoring with detailed feedback and improvement suggestions
+- Enhance resume analysis using improved LLM prompting and optimization techniques
+- Build a job recommendation system based on skills, experience, and resume content
+- Deploy the complete system on cloud platforms like AWS / Render / Railway
+- Improve responsiveness and add mobile-friendly UI support
+- Add email notifications for job application status updates and reminders
