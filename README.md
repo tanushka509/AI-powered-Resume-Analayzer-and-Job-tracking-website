@@ -74,25 +74,25 @@ The system is designed using a modular REST API architecture and can be integrat
 
 ---
 ## 🏗️ Architecture
-Client / API Request
-        ↓
-Express Server
-        ↓
-JWT Authentication Middleware
-        ↓
-Controllers Layer
+[ Client / API Request ]
+            ↓
+[ Express Server ]
+            ↓
+[ JWT Authentication Middleware ]
+            ↓
+[ Controllers Layer ]
    ├── Auth Controller
    ├── Resume Controller
    └── Job Controller
-        ↓
-Service Layer
+            ↓
+[ Service Layer ]
    ├── Auth Service (JWT + bcrypt)
    ├── Resume Service
-   │     ├── pdf-parse (extract text)
-   │     └── Groq AI API (analysis)
+   │     ├── pdf-parse (text extraction)
+   │     └── Groq AI API (resume analysis)
    └── Job Service (CRUD operations)
-        ↓
-MongoDB Database
+            ↓
+[ MongoDB Database ]
    ├── Users Collection
    └── Jobs Collection
 
