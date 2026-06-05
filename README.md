@@ -104,20 +104,12 @@ git clone https://github.com/tanushka509/AI-powered-Resume-Analayzer-and-Job-tra
 cd AI-powered-Resume-Analayzer-and-Job-tracking-website
 npm install
 npm run dev
----
 
-## 🧠 Key Learnings
-- Implemented JWT-based authentication system  
-- Built a secure file upload and processing pipeline using Multer  
-- Integrated LLM (Groq API) for resume analysis and insights  
-- Designed modular backend architecture using REST APIs  
-- Built a real-world job tracking CRUD system with user-level data isolation  
+🔐 Environment Variables
 
----
+Create a .env file in the root directory and add the following:
 
-## 🚀 Future Improvements
-- Add resume scoring system (ATS score)  
-- Support DOCX and TXT resume formats  
-- Add a caching layer for AI responses to reduce API cost and latency  
-- Improve prompt engineering for more accurate AI outputs  
-- Add Docker support for containerized deployment  
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GROQ_API_KEY=your_groq_api_key
