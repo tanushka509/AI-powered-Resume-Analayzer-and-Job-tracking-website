@@ -152,7 +152,6 @@ Create a .env file in the root directory:
 ## 🚀 Future Goals
 Goals
 - Develop a full frontend dashboard using React.js for better user experience
-- Implement AI-based resume scoring with detailed feedback and improvement suggestions
 - Enhance resume analysis using improved LLM prompting and optimization techniques
 - Build a job recommendation system based on skills, experience, and resume content
 - Deploy the complete system on cloud platforms like AWS / Render / Railway
